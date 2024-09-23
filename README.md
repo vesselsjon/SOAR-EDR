@@ -16,7 +16,7 @@ The Detection Lab project aimed to establish a controlled environment for simula
 
 ### Tools Used
 
-- Draw.io for 
+- Draw.io for SOR EDR drawing.
 
 ## Steps
 drag & drop screenshots here or use imgur and reference them using imgsrc
@@ -25,4 +25,5 @@ Every screenshot should have some text explaining what the screenshot is about.
 
 Example below.
 
-*Ref 1: REF*
+*Ref 1: SOAR EDR Diagram*
+![SOAR-EDR-Drawing](https://github.com/user-attachments/assets/84b376b1-ddfa-4dc6-a568-07319ce25231)
