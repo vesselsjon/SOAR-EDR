@@ -1,29 +1,50 @@
 # SOAR EDR
 
 ## Objective
-[Brief Objective - Remove this afterwards]
 
-The Detection Lab project aimed to establish a controlled environment for simulating and detecting cyber attacks. The primary focus was to ingest and analyze logs within a Security Information and Event Management (SIEM) system, generating test telemetry to mimic real-world attack scenarios. This hands-on experience was designed to deepen understanding of network security, attack patterns, and defensive strategies.
+The SOAR-EDR project aimed to establish a controlled environment for simulating and detecting cyber attacks. The primary focus was to simulate an attack using the <a href="https://www.geeksforgeeks.org/retrieve-all-passwords-with-lazagne-project/">LaZagne password-cracker<a> in a controlled environment which would then send a detection alert LimaCharlie using an automated detection & response rule. LimaCharlie would then send the detection to Tines which would send a message with details to slack and an email, and prompt a user to either isolate the pc or investigate further (see reference diagram-1 down below). This hands-on experience was designed to deepen understanding of detection rules, automation, and defensive strategies.
 
 ### Skills Learned
-[Bullet Points - Remove this afterwards]
 
-- Advanced understanding of SIEM concepts and practical application.
-- Proficiency in analyzing and interpreting network logs.
+- Advanced understanding of SOAR/EDR topics.
+- Proficiency in analyzing and interpreting detections.
 - Ability to generate and recognize attack signatures and patterns.
-- Enhanced knowledge of network protocols and security vulnerabilities.
+- Enhanced knowledge of LimaCharlie, Tines, and Slack.
 - Development of critical thinking and problem-solving skills in cybersecurity.
 
 ### Tools Used
 
 - Draw.io for SOR EDR drawing.
+- LimaCharlie to create a D&R rules, read detections, and analyze sensor(s).
+- Slack to create an automated thread to send detailed messages to.
+- Tines to create a playbook for sending messages, and prompting a user to either isolate a sensor or not.
 
 ## Steps
-drag & drop screenshots here or use imgur and reference them using imgsrc
 
-Every screenshot should have some text explaining what the screenshot is about.
-
-Example below.
-
-*Ref 1: SOAR EDR Diagram*
+*Ref 1: SOAR EDR Diagram NEED TO CHANGE*
 ![SOAR-EDR-Drawing](https://github.com/user-attachments/assets/84b376b1-ddfa-4dc6-a568-07319ce25231)
+
+The infected PC gets detected by a created D&R rule. LimaCharlie sends this detection to Tines which sends a slack message, email, and user prompt containing a detailed list of information. The user is prompted to either isolate the pc or investigate further. Should a pc be isolated, the network will shut down, and a message will be sent to Slack regarding isolation status. Should a pc not be isolated, the network will remain turned on, and a message will be sent to slack mentioning the pc was not isolated.
+
+The next step was to create a LimaCharlie organization to make a few different things. The first was creating a sensor (the pc which was to be infected), following which creating a D&R rule to catch our suspicious LaZagne.exe. Running this D&R would create a detection which can be sent to the next step for Tines.
+
+*Ref 2: D&R rule and event test*
+
+![image](https://github.com/user-attachments/assets/2dd03340-d77a-418d-9193-29d17657d098)
+
+![image](https://github.com/user-attachments/assets/8bb616ba-19ca-44eb-875a-4833d7dc7f79)
+
+![image](https://github.com/user-attachments/assets/956be440-86f0-4de1-9245-3af59a2fee2d)
+
+With having learned how to analyze LimaCharlie and set up automations for D&R rules and a successful test, Tines was the next major aspect to this project. Tines allows for the creation of a playbook which was helpful to set up events. First, a webhook would receive detections and send a slack message, email, and user prompt. Upon getting to the user prompt, a user would be asked if they would like to isolate the pc or not. As described earlier, if a user chooses no, they will be sent a new slack message and told to investigate further. On the other hand, should a user hit yes, the PC will lose internet connectivity (the sensor would be locked) and a new slack message would be sent regarding isolation status. Below are is a screenshot of the Tines playbook:
+
+*Ref 3: Tines playbook*
+
+![image](https://github.com/user-attachments/assets/717e442d-08c0-497e-b7dd-861cfb4ae301)
+
+
+
+
+
+
+
