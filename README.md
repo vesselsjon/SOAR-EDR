@@ -36,11 +36,33 @@ The next step was to create a LimaCharlie organization to make a few different t
 
 ![image](https://github.com/user-attachments/assets/956be440-86f0-4de1-9245-3af59a2fee2d)
 
-With having learned how to analyze LimaCharlie and set up automations for D&R rules and a successful test, Tines was the next major aspect to this project. Tines allows for the creation of a playbook which was helpful to set up events. First, a webhook would receive detections and send a slack message, email, and user prompt. Upon getting to the user prompt, a user would be asked if they would like to isolate the pc or not. As described earlier, if a user chooses no, they will be sent a new slack message and told to investigate further. On the other hand, should a user hit yes, the PC will lose internet connectivity (the sensor would be locked) and a new slack message would be sent regarding isolation status. Below are is a screenshot of the Tines playbook:
+With having learned how to analyze LimaCharlie and set up automations for D&R rules and a successful test, Tines was the next major aspect to this project. Tines allows for the creation of a playbook which was helpful to set up events. First, a webhook would receive detections and send a slack message, email, and user prompt. Upon getting to the user prompt, a user would be asked if they would like to isolate the pc or not. As described earlier, if a user chooses no, they will be sent a new slack message and told to investigate further. On the other hand, should a user hit yes, the PC will lose internet connectivity (the sensor would be locked) and a new slack message would be sent regarding isolation status. Below is a screenshot of the Tines playbook:
 
 *Ref 3: Tines playbook*
 
 ![image](https://github.com/user-attachments/assets/717e442d-08c0-497e-b7dd-861cfb4ae301)
+
+*Ref 4: Email and Slack message after an event occurs*
+
+![image](https://github.com/user-attachments/assets/f7bd0847-ab63-407b-af4a-3c1555a00c1b)
+
+![image](https://github.com/user-attachments/assets/18ab6ea4-3b5e-42a5-a7d9-d1f740d98646)
+
+*Ref 5: If a user hits no*
+
+![image](https://github.com/user-attachments/assets/dc86d9ba-c7dc-4bb2-b224-82be85b971d6)
+
+![image](https://github.com/user-attachments/assets/900fdb8a-3639-4e8e-b384-350383834fb1)
+
+*Ref 6: If a user hits yes*
+
+![image](https://github.com/user-attachments/assets/6842804d-a892-422c-8602-46bd931d0ba0)
+
+![image](https://github.com/user-attachments/assets/c5c7a8ef-a013-411d-97c4-6a8de59a2f5e)
+
+
+
+
 
 
 
